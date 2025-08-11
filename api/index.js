@@ -22,4 +22,9 @@ mongoose.connect(process.env.MONGO_URI, {
 app.use('/api/auth', authRoutes);
 app.use('/api/profiles', profileRoutes);
 
+// Test route for Vercel deployment
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working!' });
+});
+
 module.exports = app;
